@@ -1,9 +1,29 @@
+{% load static %}
 <html>
-    <head></head>
+    <head>
+        <link rel="stylesheet" href="{%static 'myapp/styles.css'%}">
+    </head>
     <body>
-        <h1> This is template</h1>
+        <!-- <h1> This is template</h1> -->
+        <nav>
+            <div>
+                <div>
+                    <div class="flex">
+                        <div class="flex">
+                            <a href="#" class="flex px-2 py-4 text-center">
+                            <img class="h-9 w-9" src="{% static 'myapp\image\cyborg.png'%}" alt="">
+                            <span class="text-red-800 font-semibold text-lg">Gear Shop</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="py-4 px-2">Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
         {% for product in products %}
-        <a href="/myapp/products/{{product.id}}">
+        <a href="{% url 'myapp:product_detail' product.id %}">
             {{ product.name }} -> {{ product.price }} -> {{ product.description }} <br>
         </a>
         {% endfor %}
