@@ -5,5 +5,5 @@ from . import views  # "." means call subject in the same directory
 urlpatterns = [
     path('', views.index),
     path('products/', views.products),
-    # path('main/', views.index)
+    path('products/<int:id>/', views.product_detail),
 ]
