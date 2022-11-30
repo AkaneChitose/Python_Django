@@ -1,0 +1,38 @@
+{%load static%}
+<html>
+
+<head>
+    <link rel="stylesheet" href="{%static 'myapp/styles.css'%}">
+</head>
+
+<body>
+    <nav>
+        <div class="flex grid grid-cols-5 justify-center h-24 p-4 shadow-2xl">
+            <div class="flex justify-center items-center text-red-800 text-lg font-semibold">
+                <a href="#" class=" border-b-2 border-red-500">Home</a>
+            </div>
+            <div class="flex justify-center items-center text-red-800 text-lg font-semibold">
+                <a href="#" class="">Shop</a>
+            </div>
+            <div class="flex justify-center">
+                <a href="#">
+                    <center>
+                        <img class="h-12 w-12" src="{% static 'myapp\image\radar.png'%}" alt="">
+                        <span class="text-red-800 font-semibold text-2xl">Gear Shop</span>
+                    </center>
+                </a>
+            </div>
+            <div class="flex justify-center items-center text-red-800 text-lg font-semibold">
+                <a href="#" class="">About us</a>
+            </div>
+            <div class="flex justify-center items-center text-red-800 text-lg font-semibold">
+                <a href="#" class="">Coupon</a>
+            </div>
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+</body>
+
+</html>
