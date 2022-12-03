@@ -1,13 +1,13 @@
 {%extends 'myapp/base.html'%}
-{}
 {%block content%}
-<h1>
-    {{product.name}}
-</h1>
-<h2>
-    {{product.price}}
-</h2>
-<h3>
-    {{product.description}}
-</h3>
+<div class="flex p-2 w-full h-200">
+    <img class="p-16 max-w-5xl object-cover" src="{{product.image.url}}" alt="">
+    <div class="p-16 text-2xl">
+        <div>
+            <div class="mt-4 font-semibold">{{product.name}}</div>
+            <div class="mt-4 text-green-500">${{product.price}}</div>
+            <div class="mt-4 font-semibold">{{product.description}}</div>
+        </div>
+    </div>
+</div>
 {%endblock%}
