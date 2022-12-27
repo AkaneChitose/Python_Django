@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+    /* Import Tailwind CSS styles */
+    @import 'https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css';
+
+    /* Popup style */
+    #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Use Tailwind CSS classes to style the pop-up */
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    #popup-message {
+        /* Use Tailwind CSS classes to style the message text */
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
+<div id="popup" class="flex flex-col items-center p-6 rounded-md shadow-md">
+    <p id="popup-message" class="text-xl font-bold text-gray-700 mb-4"></p>
+    <button onclick="hidePopup()" class="px-4 py-2 font-bold text-white bg-blue-500 rounded-full

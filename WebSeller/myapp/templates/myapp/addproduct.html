@@ -1,14 +1,60 @@
 {%extends 'myapp/base.html'%}
 {%block content%}
 {%load static%}
+<section class="bg-gray-50 dark:bg-gray-900">
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+            <img class="w-8 h-8 mr-2" src="{% static 'myapp\image\ADD-DATABASE.png'%}" alt="logo">
+            <h1 class="font-bold text-red-600">TechGear</h1>
+        </a>
+        <h1
+            class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-3xl dark:text-white">
+            Add Product
+        </h1>
+        <div
+            class="w-full bg-white rounded-xl shadow-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <form class="space-y-4 md:space-y-6" method="POST" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    <div class="mb-4">
+                        <label class="block mb-2 text font-bold text-gray-900 dark:text-white" for="">Product
+                            Name</label>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            type="text" name="name" id="name">
+                    </div>
+                    <div>
+                        <label class="block text-text-gray-700 text-md font-bold md-2 mb-2" for="">Product Price</label>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            type="text" name="price" id="price">
+                    </div>
+                    <div>
+                        <label class="block text-text-gray-700 text-md font-bold md-2 mb-2 mt-4" for="">Product
+                            Descriptions</label>
+                        <input
+                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            id="description">
+                    </div>
+                    <div>
+                        <label class="block text-text-gray-700 text-md font-bold md-2 mb-2 mt-4" for="">Product
+                            Image</label>
+                        <input class="py-2 mr-10 mb-2" type="file" accept="image/+" name="upload" id="upload">
+                    </div>
+                    <input class="bg-red-600 text-white px-5 py-2 rounded-3xl" type="submit" name="Add Product"
+                        value="Add product" id="Add product">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
-<div class="flex justify-center">
+<!-- <div class="flex justify-center">
     <img class="mt-10 w-16 h-16" src="{% static 'myapp\image\ADD-DATABASE.png'%}" alt=""></img>
     <h1 class="mt-14 text-3xl font-bold m-10 text-red-700 ">ADD PRODUCT</h1>
 </div>
-<!-- m-10 px-8 py-4 w-2/5 flex flex-col justify-center  -->
-<div class="flex justify-center">
-    <form class="bg-white shadow-lg border rounded-2xl px-24 pt-6 pb-8 mb-4 " method="POST"
+<div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <form class="bg-white shadow-lg border rounded-2xl px-24 h-96 pt-6 pb-8 mb-4 " method="POST"
         enctype="multipart/form-data">
         {%csrf_token%}
         <div class="mb-4">
@@ -33,5 +79,5 @@
         <input class="bg-green-500 text-white px-5 py-2 rounded-md" type="submit" name="Add Product" value="Add product"
             id="Add product">
     </form>
-</div>
+</div> -->
 {%endblock%}
